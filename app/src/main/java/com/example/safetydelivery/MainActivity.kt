@@ -239,10 +239,10 @@ class BLEService : Service() {
                 startActivity(intent)
             }
             "msg" -> {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.type = "vnd.android-dir/mms-sms"
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
+                val it = Intent()
+                it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                it.setClassName("com.sankuai.meituan.takeoutnew", "com.sankuai.meituan.takeoutnew.ui.page.boot.WelcomeActivity")
+                startActivity(it)
             }
         }
     }
